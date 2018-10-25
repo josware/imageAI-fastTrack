@@ -19,3 +19,16 @@ https://github.com/OlafenwaMoses/ImageAI/tree/master/imageai/Prediction#firstpre
 
 Object detection models
 https://github.com/OlafenwaMoses/ImageAI/tree/master/imageai/Detection#firstdetection
+
+
+Conda commands I used:
+conda install -c conda-forge tensorflow
+conda install -c anaconda numpy
+conda install -c anaconda scipy
+conda install -c conda-forge opencv
+conda install -c anaconda pillow
+conda install -c conda-forge matplotlib
+conda install -c anaconda h5py
+conda install -c conda-forge keras
+conda install -c https://github.com/OlafenwaMoses/ImageAI/releases/download/2.0.2/imageai-2.0.2-py3-none-any.whl
+
