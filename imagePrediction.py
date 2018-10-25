@@ -1,3 +1,4 @@
+#imagePrediction.py
 from imageai.Prediction import ImagePrediction
 import os
 import sys
