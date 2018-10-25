@@ -1,3 +1,8 @@
+This is repository is intended to be a fast track tutorial to enable the common person to simply use object detection and image recognition.
+We are using imageAI:
+https://github.com/OlafenwaMoses/ImageAI
+
+
 Dependencies:
 Python 3.5.1 & Pip3
 Tensorflow 1.4
@@ -8,18 +13,6 @@ Pillow
 Matplotlib
 h5py 
 Keras 2.x
-
-
-pip3 install https://github.com/OlafenwaMoses/ImageAI/releases/download/2.0.2/imageai-2.0.2-py3-none-any.whl
-
-
-Image prediction models
-https://github.com/OlafenwaMoses/ImageAI/tree/master/imageai/Prediction#firstprediction
-
-
-Object detection models
-https://github.com/OlafenwaMoses/ImageAI/tree/master/imageai/Detection#firstdetection
-
 
 
 --------------------------
@@ -49,3 +42,20 @@ pip3 install matplotlib
 pip3 install h5py
 pip3 install keras
 pip3 install https://github.com/OlafenwaMoses/ImageAI/releases/download/2.0.2/imageai-2.0.2-py3-none-any.whl
+
+
+
+--------------------------
+-- Quick links          --
+--------------------------
+
+Installation of imageAI library:
+pip3 install https://github.com/OlafenwaMoses/ImageAI/releases/download/2.0.2/imageai-2.0.2-py3-none-any.whl
+
+
+Image prediction models:
+https://github.com/OlafenwaMoses/ImageAI/tree/master/imageai/Prediction#firstprediction
+
+
+Object detection models:
+https://github.com/OlafenwaMoses/ImageAI/tree/master/imageai/Detection#firstdetection
