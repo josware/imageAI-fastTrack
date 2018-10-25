@@ -1,0 +1,21 @@
+Dependencies:
+Python 3.5.1 & Pip3
+Tensorflow 1.4
+Numpy 1.13.1 
+SciPy 0.19.1 
+OpenCV
+Pillow
+Matplotlib
+h5py 
+Keras 2.x
+
+
+pip3 install https://github.com/OlafenwaMoses/ImageAI/releases/download/2.0.2/imageai-2.0.2-py3-none-any.whl 
+
+
+Image prediction models
+https://github.com/OlafenwaMoses/ImageAI/tree/master/imageai/Prediction#firstprediction
+
+
+Object detection models
+https://github.com/OlafenwaMoses/ImageAI/tree/master/imageai/Detection#firstdetection
