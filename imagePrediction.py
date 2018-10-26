@@ -8,42 +8,61 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 os.system('cls' if os.name == 'nt' else 'clear')
 execution_path = os.getcwd()
 
-print("Enter Image name with ext (i.e. hello.jpg):")
-img = input()
+
+modelsDir = "models/imgPrediction/"
+imagesDir = "pictures/"
 #List of all possible models (as per Oct 24 2018)
-modelsDir = "models/objDetection/"
 models = ["squeezenet_weights_tf_dim_ordering_tf_kernels.h5","resnet50_weights_tf_dim_ordering_tf_kernels.h5",
 "inception_v3_weights_tf_dim_ordering_tf_kernels.h5","DenseNet-BC-121-32.h5"]
 
-#Variable to select the appropriate model and model type
-useModel = 1
+try:
+    img = imagesDir + sys.argv[1]
 
-#Min probability to detect
-resCount= 5
+except:
+    print("--- \nYou can also run: python imagePrediction.py image [results (1-0)] [model (0-3)] ")
+    print("      i.e. python imagePrediction.py a.jpg 5 0 \n---\n\n")
+    print("Enter image name to predict including extension (i.e. hello.jpg):")
+    img = imagesDir + input()
 
 try:
-    userModel = int(sys.argv[1])
-    if ( userModel < 4 and userModel > -1 ):
-        useModel = userModel
+    res= int(sys.argv[2])
+    if ( res < 10 and res > 1 ):
+        resCount = res
+    else:
+        resCount = 5
 except:
-    pass
+    resCount = 5
+    
+
+try:
+    model = int(sys.argv[3])
+    if ( model < 4 and model > -1 ):
+        userModel = model
+    else:
+        userModel = 0
+except:
+    #Variable to select the appropriate model and model type
+    userModel = 0
+    
+
+
     
 #Printing to console the model we are going to use
-print("Detecting using {}   ...".format(models[useModel]))
+print("Detecting using {}   ...".format(models[userModel]))
 
 prediction = ImagePrediction()
 
-if useModel == 0:
+if userModel == 0:
     prediction.setModelTypeAsSqueezeNet()
-elif useModel == 1:
+elif userModel == 1:
     prediction.setModelTypeAsResNet()
-elif useModel == 2:
+elif userModel == 2:
     prediction.setModelTypeAsInceptionV3()
 else:
     prediction.setModelTypeAsDenseNet()
 
 
-prediction.setModelPath(os.path.join(execution_path, modelsDir + models[useModel]))
+prediction.setModelPath(os.path.join(execution_path, modelsDir + models[userModel]))
 prediction.loadModel()
 
 

@@ -9,25 +9,48 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 os.system('cls' if os.name == 'nt' else 'clear')
 execution_path = os.getcwd()
 
-print("Enter Image name with ext (i.e. hello.jpg):")
-img = input()
-#List of all possible models (as per Oct 24 2018)
-modelsDir = "models/imgPrediction/"
+
+
+
+
+modelsDir = "models/objDetection/"
+imagesDir = "pictures/"
 models = ["resnet50_coco_best_v2.0.1.h5","yolo.h5","yolo-tiny.h5"]
 
-#Variable to select the appropriate model and model type
-useModel = 1
 
-#Min probability to detect
-minProb = 90
-
-#Checking for user model override
+#Checking for user override
 try:
-    userModel = int(sys.argv[1])
+    img = imagesDir + sys.argv[1]
+
+except:
+    print("--- \nYou can run: python objectDetection.py image [prob (1-100)] [model (0-2)] ")
+    print("      i.e. python objectDetection.py a.jpg 10 2 \n---\n\n")
+    print("Enter image name to predict including extension (i.e. hello.jpg):")
+    img = imagesDir + input()
+
+try:
+    prob= int(sys.argv[2])
+    if ( prob < 101 and prob > 0 ):
+        minProb = prob
+    else:
+        minProb = 30
+except:
+    #Min probability to detect
+    minProb = 30
+    
+    
+
+try:
+    userModel = int(sys.argv[3])
     if ( userModel < 3 and userModel > -1 ):
         useModel = userModel
+    else:
+        useModel = 2
 except:
-    pass
+    #Variable to select the appropriate model and model type
+    useModel = 2
+
+
 
 #Printing to console the model we are going to use
 print("Detecting using {}   ...".format(models[useModel]))
