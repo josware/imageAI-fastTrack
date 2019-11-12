@@ -32,7 +32,7 @@ conda install -c https://github.com/OlafenwaMoses/ImageAI/releases/download/2.0.
 --------------------------
 --- Manual instalation ---
 --------------------------
-pip3 install tensorflow
+pip3 install tensorflow==1.15
 pip3 install numpy
 pip3 install scipy
 pip3 install opencv-python
@@ -40,7 +40,7 @@ pip3 install pillow
 pip3 install matplotlib
 pip3 install h5py
 pip3 install keras
-pip3 install https://github.com/OlafenwaMoses/ImageAI/releases/download/2.0.2/imageai-2.0.2-py3-none-any.whl
+pip3 install imageai --upgrade
 
 
 
@@ -58,3 +58,36 @@ https://github.com/OlafenwaMoses/ImageAI/tree/master/imageai/Prediction#firstpre
 
 Object detection models:
 https://github.com/OlafenwaMoses/ImageAI/tree/master/imageai/Detection#firstdetection
+
+
+--------------------------
+--        Models        --
+--------------------------
+
+**Image prediction:**
+
+-SqueezeNet 
+https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/squeezenet_weights_tf_dim_ordering_tf_kernels.h5
+
+-ResNet50
+https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/resnet50_weights_tf_dim_ordering_tf_kernels.h5
+
+-InceptionV3
+https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/inception_v3_weights_tf_dim_ordering_tf_kernels.h5
+
+-DenseNet121
+https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/DenseNet-BC-121-32.h5
+
+
+**Object detection:**
+
+-RetinaNet
+https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/resnet50_coco_best_v2.0.1.h5
+
+-YOLOv3
+https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/yolo.h5
+
+TinyYOLOv3
+-https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/yolo-tiny.h5
+
+
